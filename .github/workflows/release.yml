@@ -36,6 +36,8 @@ jobs:
       - build-wsa-kernel
       - build-arcvm-kernel
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Download artifacts
         uses: actions/download-artifact@v4

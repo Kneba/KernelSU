@@ -9,10 +9,12 @@ $COMMIT_MESSAGE
 [Workflow run]($RUN_URL)
 "
 
+BOT_BUILD_URL="https://api.telegram.org/bot$BOT_TOKEN/sendDocument"
+
 file="$1"
 
-curl -s -F document=@$file "https://api.telegram.org/bot$BOT_TOKEN/sendDocument" \
-	-F chat_id="$CHAT_ID" \
-	-F "disable_web_page_preview=true" \
-	-F "parse_mode=markdownv2" \
-	-F caption="$msg"
+curl -F document=@$file "$BOT_BUILD_URL" \
+	 -F chat_id="$CHAT_ID" \
+	 -F "disable_web_page_preview=true" \
+	 -F "parse_mode=markdownv2" \
+	 -F caption="$msg"

@@ -6,6 +6,8 @@
 #include "avc.h"
 #endif
 
+#define KERNEL_SU_DOMAIN "u:r:su:s0"
+
 static int transive_to_domain(const char *domain)
 {
 	struct cred *cred;
